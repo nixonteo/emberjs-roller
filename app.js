@@ -27,5 +27,6 @@ Roller.IndexRoute = Ember.Route.extend({
 Roller.RollRoute = Ember.Route.extend({
 	setupController: function(controller){
 		controller.set('on_roll', "You are in the roll page");
+		controller.set('second', "This is the second on the roll page");
 	}
 });
