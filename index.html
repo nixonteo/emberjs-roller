@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>An Ember dice roller</title>
+
+        <title>Ember JS Dice Roller</title>
+
     </head>
 
     <body>
+	<script type="text/x-handlebars" id="application">
+    <h1>Dice Roller</h1>
+    	
+    	<p>{{#linkTo "index"}}Go to Index{{/linkTo}}</p>
+    	
+    	{{outlet}}
+	</script>
+	
+	<script type="text/x-handlebars" id="index">
+	<h2>{{on_index}}</h2>
+    <p>
+        {{#linkTo "roll"}}Start rolling dice!{{/linkTo}}
+        {{#linkTo "roll2"}}Goes to other path{{/linkTo}}
+        {{#linkTo "roll3"}}Goes to Heaven{{/linkTo}}
+        {{#linkTo "roll3.gate"}}Goes to Gate{{/linkTo}}
+        
+    </p>
+	</script>
+	
+	<script type="text/x-handlebars" id="roll">
+		<p>Roll template displayed</p>
+		{{on_roll}}
+	</script>
+	
+	<script type="text/x-handlebars" id="roll2">
+		<p>Roll 2 template displayed</p>
+	</script>
+	
+	<script type="text/x-handlebars" id="roll3/gate">
+		<p>You arrived at the gates of heaven, go back!</p>
+	</script>
 
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.4.0/ember.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
     </body>
